@@ -43,9 +43,6 @@ if(BUILD_METHOD STREQUAL spack)
   SetFairSoftFlags()
 
   # Configure ##################################################################
-  # TODO git submodule update --init
-  # TODO setup environment, maybe generate module file?
-  # TODO generate spack configuration
 
   # Update spack submodule
   if(GIT_FOUND)
@@ -116,7 +113,6 @@ if(BUILD_METHOD STREQUAL spack)
   endif()
 
   # Build ######################################################################
-  # TODO add_custom_target(SpackBuild ALL spack install)
 
   # Install fairroot and dependencies
   add_custom_target(SpackBuild ALL ${CMAKE_SOURCE_DIR}/spack/bin/spack -C
@@ -128,7 +124,6 @@ if(BUILD_METHOD STREQUAL spack)
       ${CMAKE_INSTALL_PREFIX}/fairsoft/bin/fairsoft-config @ONLY)
 
   # Install ####################################################################
-  # TODO spack commands to create spack env via install(SCRIPT ...)
 
   # Put links to all packages into one installation folder
   install(CODE "execute_process(COMMAND ./spack/bin/spack -C \
