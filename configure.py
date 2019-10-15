@@ -1,4 +1,4 @@
-#!python
+#!/usr/bin/env python
 
 ################################################################################
 #    Copyright (C) 2019 GSI Helmholtzzentrum fuer Schwerionenforschung GmbH    #
@@ -156,6 +156,9 @@ class Application:
                  {"display": "from <build>/legacy/transport directory", "value": "directory"}])
             self.buildDirQuestion = PathQuestion(self.screen, "Build Directory", "TODO")
             defaultPrefix = os.path.expandvars("$HOME/fairsoft/" + self.fairsoftVersion)
+            defaultPrefix = os.path.expandvars("$HOME/fairsoft/" + self.fairsoftVersion)
+            self.spackQuestion = PathQuestion(self.screen, "Spack install prefix", ["bundled", "detect from $PATH", "custom installation"])
+            self.spackRootQuestion = PathQuestion(self.screen, "SPACK_ROOT", defaultPrefix)
             self.destinationQuestion = PathQuestion(self.screen, "Install Prefix", defaultPrefix)
 
             self.running = False
